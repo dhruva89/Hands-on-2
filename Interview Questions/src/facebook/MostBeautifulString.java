@@ -89,6 +89,6 @@ public class MostBeautifulString {
 		}
 		System.out.println(beautifulString);
 		System.out.println(IsSubsequence.isSubsequence(beautifulString.toString(), input));
-
+		
 	}
 }

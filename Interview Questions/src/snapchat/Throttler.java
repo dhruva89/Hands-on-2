@@ -8,7 +8,7 @@ class Throttler {
 	}
 
 	public boolean allowAccess() {
-		if (queries.peek() == 0) {
+		if (queries.peek() == -1) {
 			queries.add(System.currentTimeMillis());
 			return true;
 		} else if ((System.currentTimeMillis() - queries.peek()) >= 1000) {
@@ -21,8 +21,8 @@ class Throttler {
 
 	private class CircularLinkedList {
 		private class Node {
-			public long timeOfQuery;
-			public Node next;
+			public long timeOfQuery = -1;
+			public Node next = null;
 		}
 
 		private Node cur;
